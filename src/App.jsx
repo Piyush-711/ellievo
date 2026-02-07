@@ -115,7 +115,7 @@ const CardStep = ({ onNext }) => (
         <h2 className="text-4xl font-serif font-bold text-rose-950 mb-8 mt-6 italic">A Digital Blossom</h2>
         <div className="w-16 h-1 bg-rose-100 mx-auto mb-8 rounded-full"></div>
         <p className="text-gray-700 leading-relaxed mb-12 text-xl font-serif italic">
-          ". Happy Rose Day to the one who makes my soul bloom."
+          "This rose is for someone who doesn’t need a rose to feel special,yet I still give it—because I love you. You may not ask for roses, but my heart chooses you the way a rose chooses to bloom.
         </p>
         
         <button 
