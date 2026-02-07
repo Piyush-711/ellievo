@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Heart, ChevronLeft, ChevronRight, Music, Flower2, Star, Wand2, Camera } from 'lucide-react';
+import whatsappImage from '../WhatsApp Image 2026-02-07 at 13.38.10.jpeg';
 
 const FloatingBloom = ({ x, y, onComplete }) => {
   useEffect(() => {
@@ -58,11 +59,11 @@ const IntroStep = ({ onOpen }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 text-center">
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8 text-center">
       <div className="relative group max-w-sm w-full">
         <div className="absolute -inset-10 bg-rose-300 rounded-full blur-3xl opacity-20 animate-pulse"></div>
         
-        <div className="relative bg-white/80 backdrop-blur-md p-8 pt-12 rounded-[3rem] shadow-2xl border-4 border-white overflow-hidden">
+        <div className="relative bg-white/80 backdrop-blur-md p-6 pt-10 sm:p-8 sm:pt-12 rounded-[3rem] shadow-2xl border-4 border-white overflow-hidden">
           <div className="relative mx-auto w-44 h-44 mb-10">
             <div className="absolute inset-0 bg-rose-200 rounded-full animate-ping opacity-30 scale-125"></div>
             <div className="absolute inset-0 bg-rose-100 rounded-full animate-pulse opacity-40 scale-110"></div>
@@ -74,7 +75,7 @@ const IntroStep = ({ onOpen }) => {
             </div>
           </div>
           
-          <h1 className="text-3xl font-serif font-bold text-rose-950 mb-2 leading-tight">Will you be my Rose?</h1>
+          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-rose-950 mb-2 leading-tight">Will you be my Rose?</h1>
           <p className="text-gray-500 text-sm italic mb-10">A tiny surprise is waiting for you...</p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 min-h-[60px]">
@@ -105,16 +106,16 @@ const IntroStep = ({ onOpen }) => {
 };
 
 const CardStep = ({ onNext }) => (
-  <div className="flex flex-col items-center justify-center min-h-screen p-6 text-center animate-in fade-in zoom-in duration-1000">
+  <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8 sm:p-6 text-center animate-in fade-in zoom-in duration-1000">
     <div className="max-w-md w-full bg-white/60 backdrop-blur-2xl p-1 rounded-[3rem] shadow-2xl border border-white/50">
-      <div className="bg-white p-12 rounded-[2.8rem] relative">
-        <div className="w-20 h-20 bg-rose-600 text-white p-5 rounded-full shadow-xl shadow-rose-200 mx-auto -mt-20 flex items-center justify-center border-8 border-white">
+      <div className="bg-white p-8 sm:p-12 rounded-[2.8rem] relative">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-rose-600 text-white p-4 sm:p-5 rounded-full shadow-xl shadow-rose-200 mx-auto -mt-16 sm:-mt-20 flex items-center justify-center border-8 border-white">
           <Heart fill="currentColor" size={32} />
         </div>
         
-        <h2 className="text-4xl font-serif font-bold text-rose-950 mb-8 mt-6 italic">A Digital Blossom</h2>
-        <div className="w-16 h-1 bg-rose-100 mx-auto mb-8 rounded-full"></div>
-        <p className="text-gray-700 leading-relaxed mb-12 text-xl font-serif italic">
+        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-rose-950 mb-6 sm:mb-8 mt-6 italic">A Digital Blossom</h2>
+        <div className="w-16 h-1 bg-rose-100 mx-auto mb-6 sm:mb-8 rounded-full"></div>
+        <p className="text-gray-700 leading-relaxed mb-8 sm:mb-12 text-base sm:text-xl font-serif italic">
           "This rose is for someone who doesn’t need a rose to feel special,yet I still give it—because I love you. You may not ask for roses, but my heart chooses you the way a rose chooses to bloom.
         </p>
         
@@ -131,6 +132,7 @@ const CardStep = ({ onNext }) => (
 
 const ScrapbookStep = ({ onPrev, onRestart }) => {
   const images = [
+    whatsappImage,
     'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500',
     'https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=500',
     'https://images.unsplash.com/photo-1548610762-65657f548b9c?w=500',
@@ -138,18 +140,18 @@ const ScrapbookStep = ({ onPrev, onRestart }) => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 animate-in slide-in-from-bottom duration-700">
-      <div className="max-w-4xl w-full bg-[#fdfaf6] p-8 md:p-14 rounded-xl shadow-2xl border-8 border-white relative transform rotate-1">
-        <div className="absolute top-4 left-4 text-rose-100"><Camera size={40} /></div>
-        <h2 className="text-3xl font-serif font-bold text-rose-900 mb-10 text-center">Moments in Bloom</h2>
+    <div className="min-h-screen flex flex-col items-center justify-center px-3 py-6 sm:p-4 animate-in slide-in-from-bottom duration-700">
+      <div className="max-w-4xl w-full bg-[#fdfaf6] p-5 sm:p-8 md:p-14 rounded-xl shadow-2xl border-8 border-white relative transform md:rotate-1">
+        <div className="absolute top-3 left-3 text-rose-100"><Camera size={32} className="sm:w-8 sm:h-8" /></div>
+        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-rose-900 mb-8 sm:mb-10 text-center">Moments in Bloom</h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 mb-8 sm:mb-10">
           {images.map((img, i) => (
-            <div key={i} className={`bg-white p-3 shadow-lg transform ${i % 2 === 0 ? '-rotate-2' : 'rotate-2'} hover:rotate-0 transition-transform duration-500`}>
-              <div className="aspect-square bg-gray-100 overflow-hidden mb-3 border border-gray-50">
-                <img src={img} alt="Rose" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+            <div key={i} className={`bg-white p-2 sm:p-3 shadow-lg transform ${i % 2 === 0 ? 'sm:-rotate-2' : 'sm:rotate-2'} hover:rotate-0 transition-transform duration-500`}>
+              <div className="aspect-square bg-gray-100 overflow-hidden mb-2 sm:mb-3 border border-gray-50">
+                <img src={img} alt="Rose" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" loading="lazy" />
               </div>
-              <p className="text-center font-serif text-rose-400 italic text-sm">Forever & Always</p>
+              <p className="text-center font-serif text-rose-400 italic text-xs sm:text-sm">Forever & Always</p>
             </div>
           ))}
         </div>
@@ -188,7 +190,7 @@ export default function App() {
 
   return (
     <div 
-      className="min-h-screen bg-[#fffafa] selection:bg-rose-100 overflow-x-hidden cursor-crosshair relative"
+      className="min-h-screen bg-[#fffafa] selection:bg-rose-100 overflow-x-hidden cursor-auto md:cursor-crosshair relative"
       onClick={handleInteraction}
     >
       <FallingPetals />
@@ -197,16 +199,16 @@ export default function App() {
         <FloatingBloom key={b.id} x={b.x} y={b.y} onComplete={() => removeBloom(b.id)} />
       ))}
 
-      <div className="fixed top-8 right-8 z-50">
+      <div className="fixed top-4 sm:top-8 right-4 sm:right-8 z-50">
         <button 
           onClick={(e) => { e.stopPropagation(); setIsMagicOn(!isMagicOn); }}
-          className={`p-4 rounded-full shadow-2xl transition-all duration-500 ${isMagicOn ? 'bg-rose-600 text-white rotate-12 scale-110 shadow-rose-300' : 'bg-white text-rose-300'}`}
+          className={`p-3 sm:p-4 rounded-full shadow-2xl transition-all duration-500 ${isMagicOn ? 'bg-rose-600 text-white rotate-12 scale-110 shadow-rose-300' : 'bg-white text-rose-300'}`}
         >
           {isMagicOn ? <Wand2 size={24} /> : <Music size={24} />}
         </button>
       </div>
 
-      <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 flex gap-4 bg-white/40 backdrop-blur-md p-3 rounded-full border border-white/50">
+      <div className="fixed bottom-4 sm:bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-50 flex gap-3 sm:gap-4 bg-white/60 backdrop-blur-md px-3 py-2 sm:p-3 rounded-full border border-white/50">
         {[1, 2, 3].map((s) => (
           <div 
             key={s} 
