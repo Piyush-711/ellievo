@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Heart, ChevronLeft, ChevronRight, Music, Flower2, Star, Wand2, Camera } from 'lucide-react';
 import whatsappImage from '../WhatsApp Image 2026-02-07 at 13.38.10.jpeg';
+import backgroundSong from '../Pal_Pal.mp3';
 
 const FloatingBloom = ({ x, y, onComplete }) => {
   useEffect(() => {
@@ -174,6 +175,7 @@ export default function App() {
   const [step, setStep] = useState(1);
   const [isMagicOn, setIsMagicOn] = useState(true);
   const [blooms, setBlooms] = useState([]);
+  const audioRef = useRef(null);
 
   const handleInteraction = useCallback((e) => {
     if (step <= 2) {
@@ -194,6 +196,7 @@ export default function App() {
       onClick={handleInteraction}
     >
       <FallingPetals />
+      <audio ref={audioRef} src={backgroundSong} loop className="hidden" />
       
       {blooms.map(b => (
         <FloatingBloom key={b.id} x={b.x} y={b.y} onComplete={() => removeBloom(b.id)} />
@@ -201,7 +204,21 @@ export default function App() {
 
       <div className="fixed top-4 sm:top-8 right-4 sm:right-8 z-50">
         <button 
-          onClick={(e) => { e.stopPropagation(); setIsMagicOn(!isMagicOn); }}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsMagicOn((prev) => {
+              const next = !prev;
+              if (audioRef.current) {
+                if (next) {
+                  audioRef.current.play().catch(() => {});
+                } else {
+                  audioRef.current.pause();
+                  audioRef.current.currentTime = 0;
+                }
+              }
+              return next;
+            });
+          }}
           className={`p-3 sm:p-4 rounded-full shadow-2xl transition-all duration-500 ${isMagicOn ? 'bg-rose-600 text-white rotate-12 scale-110 shadow-rose-300' : 'bg-white text-rose-300'}`}
         >
           {isMagicOn ? <Wand2 size={24} /> : <Music size={24} />}
